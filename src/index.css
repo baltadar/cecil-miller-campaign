@@ -8,35 +8,53 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    /* Cecil Miller campaign palette */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 0 0% 8%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 8%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Orange = candidate brand */
+    --primary: 18 95% 52%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 28 100% 60%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Roots Party red */
+    --party-red: 0 100% 40%;
+    --party-red-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Deep night for hero */
+    --night: 220 40% 8%;
+    --night-foreground: 0 0% 98%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 38%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --accent: 18 95% 52%;
+    --accent-foreground: 0 0% 100%;
 
-    --radius: 0.5rem;
+    --destructive: 0 84.2% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 18 95% 52%;
+
+    --radius: 0.625rem;
+
+    --gradient-hero: linear-gradient(120deg, hsl(220 50% 6% / 0.92), hsl(220 40% 10% / 0.7));
+    --gradient-brand: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-party: linear-gradient(135deg, hsl(var(--party-red)), hsl(0 80% 30%));
+    --shadow-elegant: 0 20px 60px -20px hsl(var(--primary) / 0.35);
+    --shadow-card: 0 8px 30px -12px hsl(0 0% 0% / 0.15);
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +119,33 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-hero { background-image: var(--gradient-hero); }
+  .bg-gradient-brand { background-image: var(--gradient-brand); }
+  .bg-gradient-party { background-image: var(--gradient-party); }
+  .shadow-elegant { box-shadow: var(--shadow-elegant); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+  .text-balance { text-wrap: balance; }
+  .animate-fade-up { animation: fade-up 0.7s var(--transition-smooth) both; }
+  .animate-fade-in { animation: fade-in 0.8s ease-out both; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
   }
 }
