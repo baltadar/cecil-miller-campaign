@@ -19,7 +19,7 @@ export default function PartySection({ preview = true }: { preview?: boolean }) 
           <div className="flex justify-center">
             <div className="h-40 w-40 md:h-52 md:w-52 rounded-full overflow-hidden">
               <img
-                src="/roots-party-logo.png"
+                src="https://res.cloudinary.com/dbgcwdes6/image/upload/v1777200526/roots_party_logo_mqpbpp.jpg"
                 alt="Roots Party of Kenya flag"
                 className="w-full h-full object-cover object-center"
               />
