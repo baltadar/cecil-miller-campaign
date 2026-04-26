@@ -12,7 +12,7 @@ export default function AgendaSection({ preview = true }: { preview?: boolean })
   return (
     <section id="agenda" className="py-20 md:py-28 bg-secondary/30 border-y border-border">
       <div className="container">
-        <SectionHeading eyebrow="My Agenda" title="A Manifesto Built on Lived Reality" description="Five priorities that will shape my work in the Senate — for every Nairobian." />
+        <SectionHeading eyebrow="My Agenda" title="A Manifesto Built on Lived Reality" description="Five priorities that will shape my work in the Senate for every Nairobian." />
         <div className="flex flex-wrap gap-2 md:gap-3 justify-center mb-10">
           {agendaItems.map((item) => (
             <button
