@@ -10,7 +10,7 @@ export default function Hero() {
       {/* Subtle skyline backdrop */}
       <div
         aria-hidden
-        className="absolute inset-0 opacity-[0.06]"
+        className="absolute inset-0 opacity-[0.12]"
         style={{
           backgroundImage: "url('/nairobi-skyline.jpg')",
           backgroundSize: "cover",
@@ -39,7 +39,6 @@ export default function Hero() {
             </Button>
           </div>
         </div>
-
         <div className="order-1 md:order-2 relative animate-fade-in">
           <img
             src="/cecil-miller.png"
