@@ -17,7 +17,7 @@ export default function PartySection({ preview = true }: { preview?: boolean }) 
         />
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           <div className="flex justify-center">
-            <div className="h-56 w-56 md:h-72 md:w-72 rounded-full bg-white flex items-center justify-center overflow-hidden p-4">
+            <div className="h-40 w-40 md:h-52 md:w-52 rounded-full bg-white flex items-center justify-center overflow-hidden p-3">
               <img
                 src="/roots-party-logo.png"
                 alt="Roots Party of Kenya flag"
