@@ -6,7 +6,7 @@ import { agendaItems } from "@/content/agenda";
 import { cn } from "@/lib/utils";
 
 export default function AgendaSection({ preview = true }: { preview?: boolean }) {
-  const [active, setActive] = useState(agendaItems[0].id);
+  const [active, setActive] = useState<string>(agendaItems[0].id);
   const current = agendaItems.find((a) => a.id === active)!;
   const Icon = current.icon;
 
