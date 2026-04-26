@@ -8,10 +8,9 @@ import { cn } from "@/lib/utils";
 export default function AgendaSection({ preview = true }: { preview?: boolean }) {
   const [active, setActive] = useState<string>(agendaItems[0].id);
   const current = agendaItems.find((a) => a.id === active)!;
-  const Icon = current.icon;
 
   return (
-    <section id="agenda" className="py-20 md:py-28 bg-secondary/40 border-y border-border">
+    <section id="agenda" className="py-20 md:py-28 bg-secondary/30 border-y border-border">
       <div className="container">
         <SectionHeading eyebrow="My Agenda" title="A Manifesto Built on Lived Reality" description="Five priorities that will shape my work in the Senate — for every Nairobian." />
 
@@ -21,10 +20,10 @@ export default function AgendaSection({ preview = true }: { preview?: boolean })
               key={item.id}
               onClick={() => setActive(item.id)}
               className={cn(
-                "px-4 md:px-6 py-3 rounded-xl text-sm font-bold transition-all border-2",
+                "px-5 py-2.5 rounded-full text-sm font-semibold transition-all border",
                 active === item.id
-                  ? "bg-primary text-primary-foreground border-primary shadow-elegant"
-                  : "bg-background text-foreground/70 border-border hover:border-primary/40 hover:text-foreground"
+                  ? "bg-primary text-primary-foreground border-primary"
+                  : "bg-background text-foreground/70 border-border hover:border-primary hover:text-foreground"
               )}
             >
               {item.title}
@@ -32,19 +31,14 @@ export default function AgendaSection({ preview = true }: { preview?: boolean })
           ))}
         </div>
 
-        <div className="max-w-4xl mx-auto bg-background rounded-2xl p-8 md:p-10 shadow-card border-l-4 border-primary animate-fade-in">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="h-14 w-14 rounded-xl bg-gradient-brand grid place-items-center">
-              <Icon className="h-7 w-7 text-primary-foreground" />
-            </div>
-            <h3 className="text-2xl md:text-3xl font-extrabold text-foreground">{current.title}</h3>
-          </div>
+        <div className="max-w-4xl mx-auto bg-background rounded-lg p-8 md:p-10 border border-border border-l-2 border-l-primary animate-fade-in">
+          <h3 className="text-2xl md:text-3xl font-extrabold text-foreground mb-4">{current.title}</h3>
           <p className="text-foreground/85 leading-relaxed text-lg">{current.body}</p>
         </div>
 
         {preview && (
           <div className="text-center mt-10">
-            <Button asChild size="lg" className="bg-gradient-brand text-primary-foreground rounded-full px-7">
+            <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-7">
               <Link to="/agenda">Explore Full Agenda</Link>
             </Button>
           </div>
