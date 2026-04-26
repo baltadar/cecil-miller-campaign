@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/site/SectionHeading";
-import { partyValues, partyPillars } from "@/content/party";
 
 export default function PartySection({ preview = true }: { preview?: boolean }) {
   return (
@@ -16,10 +15,13 @@ export default function PartySection({ preview = true }: { preview?: boolean }) 
           description="Empowering the People. Reclaiming the Nation."
           invert
         />
-
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           <div className="flex justify-center">
-            <img src="/roots-party-logo.png" alt="Roots Party of Kenya flag" className="h-56 w-56 md:h-72 md:w-72 rounded-full object-cover" />
+            <img
+              src="/roots-party-logo.png"
+              alt="Roots Party of Kenya flag"
+              className="h-56 w-56 md:h-72 md:w-72 rounded-full object-cover"
+            />
           </div>
           <div>
             <p className="text-background/85 text-lg leading-relaxed">
@@ -37,30 +39,6 @@ export default function PartySection({ preview = true }: { preview?: boolean }) 
             </div>
           </div>
         </div>
-
-        <div className="mt-16">
-          <h3 className="text-center text-2xl font-extrabold mb-8 text-background">Core Values</h3>
-          <div className="flex flex-wrap justify-center gap-2">
-            {partyValues.map((v) => (
-              <span key={v} className="px-4 py-2 rounded-full border border-background/20 text-sm font-medium text-background/90">
-                {v}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-16">
-          <h3 className="text-center text-2xl font-extrabold mb-8 text-background">Party Pillars</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
-            {partyPillars.map((p, i) => (
-              <div key={p} className="flex gap-4">
-                <div className="text-2xl font-extrabold text-primary leading-none w-10 shrink-0">{String(i + 1).padStart(2, "0")}</div>
-                <p className="text-sm font-medium text-background/90 leading-snug pt-1">{p}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
         {preview && (
           <div className="text-center mt-12">
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-7">
