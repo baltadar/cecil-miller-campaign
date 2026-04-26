@@ -14,7 +14,7 @@ export default function Hero() {
           100% { transform: scale(1.08) translate(0%, 0%); }
         }
         .skyline-drift {
-          animation: skylineDrift 200s ease-in-out infinite;
+          animation: skylineDrift 3s ease-in-out infinite;
           will-change: transform;
         }
       `}</style>
