@@ -1,4 +1,5 @@
-import { Facebook, Instagram, ArrowUp } from "lucide-react";
+import { Facebook, Instagram, Youtube } from "lucide-react";
+import { SOCIAL } from "@/content/social";
 
 const XIcon = () => (
   <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current" aria-hidden>
@@ -8,25 +9,18 @@ const XIcon = () => (
 
 export default function Footer() {
   return (
-    <footer className="border-t-4 border-party bg-night text-night-foreground relative">
+    <footer className="border-t border-border bg-background text-foreground">
       <div className="container py-10 flex flex-col md:flex-row items-center justify-between gap-6">
-        <p className="text-sm text-night-foreground/70 text-center md:text-left">
-          Copyright © 2027 Cecil Miller. All Rights Reserved.
+        <p className="text-sm text-muted-foreground text-center md:text-left">
+          © {new Date().getFullYear()} Hon. Cecil Miller for Senator. All Rights Reserved.
         </p>
         <div className="flex items-center gap-5">
-          <img src="/roots-party-logo.png" alt="Roots Party of Kenya" className="h-10 w-10 rounded-full object-cover ring-2 ring-party" />
-          <a href="#" aria-label="Facebook" className="hover:text-primary transition-colors"><Facebook className="h-5 w-5" /></a>
-          <a href="#" aria-label="X" className="hover:text-primary transition-colors"><XIcon /></a>
-          <a href="#" aria-label="Instagram" className="hover:text-primary transition-colors"><Instagram className="h-5 w-5" /></a>
+          <a href={SOCIAL.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-primary transition-colors"><Facebook className="h-5 w-5" /></a>
+          <a href={SOCIAL.twitter} target="_blank" rel="noopener noreferrer" aria-label="X" className="hover:text-primary transition-colors"><XIcon /></a>
+          <a href={SOCIAL.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-primary transition-colors"><Instagram className="h-5 w-5" /></a>
+          <a href={SOCIAL.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="hover:text-primary transition-colors"><Youtube className="h-5 w-5" /></a>
         </div>
       </div>
-      <button
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        aria-label="Scroll to top"
-        className="fixed bottom-6 right-6 z-40 h-12 w-12 rounded-full bg-gradient-brand text-primary-foreground shadow-elegant grid place-items-center hover:scale-110 transition-transform"
-      >
-        <ArrowUp className="h-5 w-5" />
-      </button>
     </footer>
   );
 }
