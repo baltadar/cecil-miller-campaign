@@ -4,7 +4,6 @@ import StorySection from "@/components/sections/StorySection";
 import AgendaSection from "@/components/sections/AgendaSection";
 import PartySection from "@/components/sections/PartySection";
 import MediaSection from "@/components/sections/MediaSection";
-import ContactSection from "@/components/sections/ContactSection";
 
 const Index = () => (
   <Layout>
@@ -13,7 +12,6 @@ const Index = () => (
     <AgendaSection />
     <PartySection />
     <MediaSection />
-    <ContactSection />
   </Layout>
 );
 
