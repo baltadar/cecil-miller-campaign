@@ -35,7 +35,7 @@ export default function Navbar() {
             Miller
           </span>
           <span className="text-xs font-semibold tracking-widest text-muted-foreground uppercase hidden sm:inline">
-            for Senator
+            for Nairobi Senator 2027
           </span>
         </Link>
 
