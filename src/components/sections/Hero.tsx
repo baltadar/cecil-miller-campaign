@@ -14,7 +14,7 @@ export default function Hero() {
           100% { transform: scale(1.08) translate(0%, 0%); }
         }
         .skyline-drift {
-          animation: skylineDrift 20s ease-in-out infinite;
+          animation: skylineDrift 80s ease-in-out infinite;
           will-change: transform;
         }
       `}</style>
@@ -34,7 +34,7 @@ export default function Hero() {
       <div className="container relative grid md:grid-cols-2 gap-12 items-center min-h-[88vh] py-16">
         <div className="order-2 md:order-1 animate-fade-up">
           <p className="text-sm font-bold tracking-[0.25em] text-primary uppercase">
-            Biography
+            Bio
           </p>
           <h1 className="mt-5 font-extrabold text-foreground leading-[0.95] text-balance text-5xl sm:text-6xl lg:text-7xl">
             Meet<br />Cecil Miller
