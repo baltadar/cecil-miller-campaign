@@ -37,7 +37,7 @@ export default function Hero() {
             Bio
           </p>
           <h1 className="mt-5 font-extrabold text-foreground leading-[0.95] text-balance text-5xl sm:text-6xl lg:text-7xl">
-            Meet<br />Cecil Miller
+            Meet<br />Hon. Cecil Miller
           </h1>
           <div className="mt-6 h-0.5 w-24 bg-primary" />
           <p className="mt-6 text-lg text-muted-foreground max-w-md leading-relaxed">
