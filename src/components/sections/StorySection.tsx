@@ -15,20 +15,23 @@ export default function StorySection({ preview = true }: { preview?: boolean }) 
     <section id="my-story" className="py-12 md:py-16 bg-background">
       <div className="container">
         <SectionHeading eyebrow="My Story" align="left" title="A Lawyer for the People of Nairobi" />
-        <div className="grid lg:grid-cols-2 gap-8 items-start">
+        <div className="grid lg:grid-cols-[2fr_3fr] gap-8 items-start">
           <div>
             <img
               src="https://res.cloudinary.com/dbgcwdes6/image/upload/v1777194242/WhatsApp_Image_2026-04-25_at_16.44.28_dodobc.jpg"
               alt="Cecil Miller portrait"
-              className="w-full object-cover aspect-[3/4] rounded-sm"
+              className="w-full object-cover object-top aspect-[4/5] rounded-sm"
             />
           </div>
           <div>
             <p className="text-base text-foreground/85 leading-relaxed">
-              Cecil Miller is a youthful, visionary lawyer and aspiring Nairobi Senator for the 2027 General Election. A graduate of the <strong>University of Nairobi, School of Law</strong>, he is a practicing advocate with a distinguished career in public-interest law.
+              Cecil Miller is a youthful, visionary lawyer and aspiring Nairobi Senator for the 2027 General Election. A graduate of the{" "}
+              <strong>University of Nairobi, School of Law</strong>, he is a practicing advocate with a distinguished career in public-interest law.
             </p>
             <p className="mt-3 text-base text-muted-foreground leading-relaxed">
-              For the past three years he has served as <strong className="text-foreground">LSK Chair for the Coast Region</strong>, and is the <strong className="text-foreground">Secretary General of the Roots Party of Kenya</strong>. Cecil is deeply committed to the welfare of workers — gig workers, bodaboda riders, and ride-hailing drivers — and champions dignified skills training and economic empowerment for Nairobi's youth.
+              For the past three years he has served as{" "}
+              <strong className="text-foreground">LSK Chair for the Coast Region</strong>, and is the{" "}
+              <strong className="text-foreground">Secretary General of the Roots Party of Kenya</strong>. Cecil is deeply committed to the welfare of workers — gig workers, bodaboda riders, and ride-hailing drivers — and champions dignified skills training and economic empowerment for Nairobi's youth.
             </p>
             {!preview && (
               <p className="mt-3 text-base text-muted-foreground leading-relaxed">
