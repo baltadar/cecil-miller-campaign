@@ -17,11 +17,13 @@ export default function PartySection({ preview = true }: { preview?: boolean }) 
         />
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           <div className="flex justify-center">
-            <img
-              src="/roots-party-logo.png"
-              alt="Roots Party of Kenya flag"
-              className="h-56 w-56 md:h-72 md:w-72 rounded-full object-cover"
-            />
+            <div className="h-56 w-56 md:h-72 md:w-72 rounded-full bg-white flex items-center justify-center overflow-hidden p-4">
+              <img
+                src="/roots-party-logo.png"
+                alt="Roots Party of Kenya flag"
+                className="w-full h-full object-contain"
+              />
+            </div>
           </div>
           <div>
             <p className="text-background/85 text-lg leading-relaxed">
