@@ -7,16 +7,30 @@ export default function Hero() {
       id="home"
       className="relative bg-background text-foreground overflow-hidden border-b border-border"
     >
-      {/* Subtle skyline backdrop */}
-      <div
-        aria-hidden
-        className="absolute inset-0 opacity-[0.12]"
-        style={{
-          backgroundImage: "url('/nairobi-skyline.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      />
+      <style>{`
+        @keyframes skylineDrift {
+          0%   { transform: scale(1.08) translate(0%, 0%); }
+          50%  { transform: scale(1.12) translate(-1.5%, -1%); }
+          100% { transform: scale(1.08) translate(0%, 0%); }
+        }
+        .skyline-drift {
+          animation: skylineDrift 20s ease-in-out infinite;
+          will-change: transform;
+        }
+      `}</style>
+
+      {/* Animated skyline backdrop */}
+      <div aria-hidden className="absolute inset-0 opacity-[0.12] overflow-hidden">
+        <div
+          className="skyline-drift absolute inset-[-5%]"
+          style={{
+            backgroundImage: "url('/nairobi-skyline.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+      </div>
+
       <div className="container relative grid md:grid-cols-2 gap-12 items-center min-h-[88vh] py-16">
         <div className="order-2 md:order-1 animate-fade-up">
           <p className="text-sm font-bold tracking-[0.25em] text-primary uppercase">
