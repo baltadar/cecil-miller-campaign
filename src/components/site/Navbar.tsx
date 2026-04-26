@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Facebook, Instagram, Menu, X, Youtube } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { SOCIAL } from "@/content/social";
 
 const links = [
   { to: "/", label: "HOME" },
@@ -13,6 +12,13 @@ const links = [
   { to: "/contact", label: "LET'S TALK" },
 ];
 
+const SOCIAL = {
+  facebook:  "https://web.facebook.com/cecil.miller.7/",
+  twitter:   "https://x.com/cecilmiller89",
+  instagram: "https://www.instagram.com/millercecil/",
+  youtube:   "https://www.youtube.com/watch?v=0waHuWc5DHI",
+};
+
 const XIcon = () => (
   <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current" aria-hidden>
     <path d="M18.244 2H21l-6.52 7.45L22 22h-6.797l-4.77-6.21L4.8 22H2.04l6.97-7.96L2 2h6.93l4.32 5.71L18.244 2Zm-2.38 18h1.83L7.21 4h-1.9l10.55 16Z" />
@@ -22,13 +28,10 @@ const XIcon = () => (
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const location = useLocation();
-
   useEffect(() => setOpen(false), [location.pathname]);
 
   return (
-    <header
-      className="sticky top-0 inset-x-0 z-50 bg-background border-b border-border"
-    >
+    <header className="sticky top-0 inset-x-0 z-50 bg-background border-b border-border">
       <div className="container flex items-center justify-between gap-6 h-20">
         <Link to="/" className="flex items-baseline gap-2 shrink-0">
           <span className="font-extrabold text-3xl md:text-4xl tracking-tight text-primary leading-none">
@@ -59,10 +62,18 @@ export default function Navbar() {
 
         <div className="flex items-center gap-4">
           <div className="hidden md:flex items-center gap-4 text-foreground">
-            <a href={SOCIAL.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-primary transition-colors"><Facebook className="h-4 w-4" /></a>
-            <a href={SOCIAL.twitter} target="_blank" rel="noopener noreferrer" aria-label="X" className="hover:text-primary transition-colors"><XIcon /></a>
-            <a href={SOCIAL.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-primary transition-colors"><Instagram className="h-4 w-4" /></a>
-            <a href={SOCIAL.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="hover:text-primary transition-colors"><Youtube className="h-4 w-4" /></a>
+            <a href={SOCIAL.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-primary transition-colors">
+              <Facebook className="h-4 w-4" />
+            </a>
+            <a href={SOCIAL.twitter} target="_blank" rel="noopener noreferrer" aria-label="X" className="hover:text-primary transition-colors">
+              <XIcon />
+            </a>
+            <a href={SOCIAL.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-primary transition-colors">
+              <Instagram className="h-4 w-4" />
+            </a>
+            <a href={SOCIAL.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="hover:text-primary transition-colors">
+              <Youtube className="h-4 w-4" />
+            </a>
           </div>
           <button
             className="lg:hidden p-2 rounded-md text-foreground"
