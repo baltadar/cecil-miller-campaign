@@ -47,6 +47,14 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        party: {
+          DEFAULT: "hsl(var(--party-red))",
+          foreground: "hsl(var(--party-red-foreground))",
+        },
+        night: {
+          DEFAULT: "hsl(var(--night))",
+          foreground: "hsl(var(--night-foreground))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
