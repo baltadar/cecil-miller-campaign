@@ -3,7 +3,9 @@ export const SOCIAL = {
   twitter: "https://twitter.com/",
   instagram: "https://www.instagram.com/",
   youtube: "https://www.youtube.com/",
-  email: "hello@senatormiller.com",
+  email: "millergeorgeadvocates@gmail.com",
+  phone: "+254 714 736876",
+  phoneHref: "+254714736876",
 };
 
 export const YOUTUBE_VIDEOS = [
