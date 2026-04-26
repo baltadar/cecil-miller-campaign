@@ -18,7 +18,7 @@ export default function StorySection({ preview = true }: { preview?: boolean }) 
         <div className="grid lg:grid-cols-[2fr_3fr] gap-8 items-start">
           <div className="overflow-hidden rounded-sm" style={{ maxHeight: "380px" }}>
             <img
-              src="https://res.cloudinary.com/dbgcwdes6/image/upload/v1777194242/WhatsApp_Image_2026-04-25_at_16.44.28_dodobc.jpg"
+              src="https://res.cloudinary.com/dbgcwdes6/image/upload/v1777198982/Screenshot_2026-04-26_at_13.22.20_onjmt4.png"
               alt="Cecil Miller portrait"
               className="w-full h-full object-cover"
               style={{ objectPosition: "center 20%", transform: "scale(0.85)", transformOrigin: "top center" }}
