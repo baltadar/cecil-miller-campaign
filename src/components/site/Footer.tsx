@@ -1,5 +1,11 @@
-import { Facebook, Instagram, Youtube } from "lucide-react";
-import { SOCIAL } from "@/content/social";
+import { Facebook, Instagram, Mail, Phone, Youtube } from "lucide-react";
+
+const SOCIAL = {
+  facebook:  "https://web.facebook.com/cecil.miller.7/",
+  twitter:   "https://x.com/cecilmiller89",
+  instagram: "https://www.instagram.com/millercecil/",
+  youtube:   "https://www.youtube.com/watch?v=0waHuWc5DHI",
+};
 
 const XIcon = () => (
   <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current" aria-hidden>
@@ -11,9 +17,28 @@ export default function Footer() {
   return (
     <footer className="border-t border-border bg-background text-foreground">
       <div className="container py-10 flex flex-col md:flex-row items-center justify-between gap-6">
-        <p className="text-sm text-muted-foreground text-center md:text-left">
-          © {new Date().getFullYear()} Hon. Cecil Miller for Senator. All Rights Reserved.
-        </p>
+        <div className="flex flex-col items-center md:items-start gap-2">
+          <p className="text-sm text-muted-foreground text-center md:text-left">
+            © {new Date().getFullYear()} Hon. Cecil Miller for Senator. All Rights Reserved.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-3 text-sm text-muted-foreground">
+            
+              href="mailto:millergeorgeadvocates@gmail.com"
+              className="flex items-center gap-1.5 hover:text-primary transition-colors"
+            >
+              <Mail className="h-3.5 w-3.5" />
+              millergeorgeadvocates@gmail.com
+            </a>
+            <span className="hidden sm:inline text-border">|</span>
+            
+              href="tel:+254714736876"
+              className="flex items-center gap-1.5 hover:text-primary transition-colors"
+            >
+              <Phone className="h-3.5 w-3.5" />
+              +254 714 736876
+            </a>
+          </div>
+        </div>
         <div className="flex items-center gap-5">
           <a href={SOCIAL.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-primary transition-colors"><Facebook className="h-5 w-5" /></a>
           <a href={SOCIAL.twitter} target="_blank" rel="noopener noreferrer" aria-label="X" className="hover:text-primary transition-colors"><XIcon /></a>
