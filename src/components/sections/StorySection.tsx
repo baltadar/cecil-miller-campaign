@@ -17,7 +17,7 @@ export default function StorySection({ preview = true }: { preview?: boolean }) 
         <SectionHeading eyebrow="My Story" align="left" title="A Lawyer for the People of Nairobi" />
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <img src="/cecil-miller.png" alt="Cecil Miller portrait" className="w-full object-cover aspect-[4/5] rounded-sm" />
+            <img src="https://res.cloudinary.com/dbgcwdes6/image/upload/v1777194242/WhatsApp_Image_2026-04-25_at_16.44.28_dodobc.jpg" alt="Cecil Miller portrait" className="w-full object-cover aspect-[4/5] rounded-sm" />
           </div>
           <div>
             <p className="text-lg text-foreground/85 leading-relaxed">
