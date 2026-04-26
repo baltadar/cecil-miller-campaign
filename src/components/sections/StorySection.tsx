@@ -32,7 +32,7 @@ export default function StorySection({ preview = true }: { preview?: boolean }) 
             <p className="mt-3 text-base text-muted-foreground leading-relaxed">
               For the past three years he has served as{" "}
               <strong className="text-foreground">LSK Chair for the Coast Region</strong>, and is the{" "}
-              <strong className="text-foreground">Secretary General of the Roots Party of Kenya</strong>. Cecil is deeply committed to the welfare of workers — gig workers, bodaboda riders, and ride-hailing drivers — and champions dignified skills training and economic empowerment for Nairobi's youth.
+              <strong className="text-foreground">Secretary General of the Roots Party of Kenya</strong>. Cecil is deeply committed to the welfare of workers including gig workers, bodaboda riders, and ride-hailing drivers. He champions dignified skills training and economic empowerment for Nairobi's youth.
             </p>
             {!preview && (
               <p className="mt-3 text-base text-muted-foreground leading-relaxed">
