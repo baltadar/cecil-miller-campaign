@@ -54,7 +54,7 @@ export default function ContactSection({ preview = true }: { preview?: boolean }
               <h3 className="font-extrabold text-xl mb-4">Reach the Campaign</h3>
               <ul className="space-y-3 text-sm">
                 <li className="flex items-start gap-3"><Mail className="h-5 w-5 text-primary mt-0.5" /><a href={`mailto:${SOCIAL.email}`} className="hover:text-primary">{SOCIAL.email}</a></li>
-                <li className="flex items-start gap-3"><Phone className="h-5 w-5 text-primary mt-0.5" /><span>+254 700 000 000</span></li>
+                <li className="flex items-start gap-3"><Phone className="h-5 w-5 text-primary mt-0.5" /><a href={`tel:${SOCIAL.phoneHref}`} className="hover:text-primary">{SOCIAL.phone}</a></li>
                 <li className="flex items-start gap-3"><MapPin className="h-5 w-5 text-primary mt-0.5" /><span>Campaign HQ · Nairobi CBD</span></li>
               </ul>
               <div className="flex items-center gap-4 mt-5 pt-5 border-t border-border">
