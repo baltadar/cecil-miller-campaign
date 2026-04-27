@@ -4,6 +4,7 @@ import StorySection from "@/components/sections/StorySection";
 import AgendaSection from "@/components/sections/AgendaSection";
 import PartySection from "@/components/sections/PartySection";
 import MediaSection from "@/components/sections/MediaSection";
+import LetsTalkSection from "@/components/sections/LetsTalkSection";
 
 const Index = () => (
   <Layout>
@@ -12,6 +13,7 @@ const Index = () => (
     <AgendaSection />
     <PartySection />
     <MediaSection />
+    <LetsTalkSection />
   </Layout>
 );
 
