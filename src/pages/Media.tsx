@@ -25,7 +25,7 @@ const photos = [
 const articles = [
   {
     url: "https://web.facebook.com/watch/?v=26586081924359439",
-    source: "Facebook",
+    source: "Standard",
     title: "Featured: Hon. Cecil Miller in conversation",
     description: "Watch the latest featured coverage of Hon. Cecil Miller on Facebook.",
   },
