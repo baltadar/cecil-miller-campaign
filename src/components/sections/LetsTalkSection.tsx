@@ -23,7 +23,9 @@ export default function LetsTalkSection() {
             <Mail className="h-6 w-6 text-primary shrink-0 mt-1" />
             <div className="min-w-0">
               <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">Email</div>
-              <div className="font-medium whitespace-nowrap group-hover:text-primary transition-colors">{SOCIAL.email}</div>
+              <div className="font-medium whitespace-nowrap group-hover:text-primary transition-colors">
+                {SOCIAL.email}
+              </div>
             </div>
           </a>
 
@@ -73,13 +75,13 @@ export default function LetsTalkSection() {
                   <div className="font-semibold group-hover:text-primary transition-colors mb-2">
                     Contribute via M-Pesa
                   </div>
-                  <div className="space-y-1 text-sm text-muted-foreground">
+                  <div className="space-y-1 text-sm">
                     <div className="flex gap-2">
-                      <span className="font-medium text-foreground w-28 shrink-0">Business No.</span>
+                      <span className="text-muted-foreground w-28 shrink-0">Business No.</span>
                       <span className="font-mono font-bold text-foreground">516600</span>
                     </div>
                     <div className="flex gap-2">
-                      <span className="font-medium text-foreground w-28 shrink-0">Account No.</span>
+                      <span className="text-muted-foreground w-28 shrink-0">Account No.</span>
                       <span className="font-mono font-bold text-foreground">569263001</span>
                     </div>
                   </div>
@@ -96,9 +98,9 @@ export default function LetsTalkSection() {
                   <div className="font-semibold group-hover:text-primary transition-colors mb-2">
                     Diamond Trust Bank
                   </div>
-                  <div className="space-y-1 text-sm text-muted-foreground">
+                  <div className="space-y-1 text-sm">
                     <div className="flex gap-2">
-                      <span className="font-medium text-foreground w-28 shrink-0">Account No.</span>
+                      <span className="text-muted-foreground w-28 shrink-0">Account No.</span>
                       <span className="font-mono font-bold text-foreground">569263001</span>
                     </div>
                   </div>
