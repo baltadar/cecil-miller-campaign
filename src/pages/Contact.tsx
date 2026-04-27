@@ -1,21 +1,10 @@
 import Layout from "@/components/site/Layout";
 import PageHeader from "@/components/site/PageHeader";
-import { useState } from "react";
-import { z } from "zod";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import SectionHeading from "@/components/site/SectionHeading";
-import { toast } from "@/hooks/use-toast";
 import { Mail, MapPin, Phone, Facebook, Instagram, Youtube } from "lucide-react";
 import { SOCIAL } from "@/content/social";
 
-// Standalone Let's Talk / Contact page. Independent from the home page.
-const schema = z.object({
-  name: z.string().trim().min(1, "Name is required").max(100),
-  email: z.string().trim().email("Enter a valid email").max(255),
-  message: z.string().trim().min(5, "Message is too short").max(1000),
-});
+const FORM_URL = "https://forms.gle/ii3i3bn21iQFy5Zw8";
 
 const XIcon = () => (
   <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current" aria-hidden>
@@ -24,24 +13,6 @@ const XIcon = () => (
 );
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [submitting, setSubmitting] = useState(false);
-
-  const submit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const parsed = schema.safeParse(form);
-    if (!parsed.success) {
-      toast({ title: "Please check the form", description: parsed.error.issues[0].message, variant: "destructive" });
-      return;
-    }
-    setSubmitting(true);
-    setTimeout(() => {
-      toast({ title: "Message received", description: "Asante sana — the team will be in touch soon." });
-      setForm({ name: "", email: "", message: "" });
-      setSubmitting(false);
-    }, 600);
-  };
-
   return (
     <Layout>
       <PageHeader eyebrow="Let's Talk" title="Join the Movement" description="Volunteer, donate, organise — or just say hello. Every Nairobian voice matters." />
@@ -68,20 +39,26 @@ export default function Contact() {
                   <a href={SOCIAL.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="text-foreground hover:text-primary"><Youtube className="h-5 w-5" /></a>
                 </div>
               </div>
+              <a
+                href={FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block p-6 rounded-lg bg-primary text-primary-foreground border border-primary text-center font-bold hover:bg-primary/90 transition-colors"
+              >
+                Open Form in New Tab →
+              </a>
             </div>
 
-            <form onSubmit={submit} className="lg:col-span-3 p-8 rounded-lg bg-background border border-border space-y-4">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <Input placeholder="Your name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} maxLength={100} />
-                <Input type="email" placeholder="Your email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} maxLength={255} />
-              </div>
-              <Textarea rows={6} placeholder="Your message" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} maxLength={1000} />
-              <div className="flex flex-wrap gap-3 items-center justify-between">
-                <Button type="submit" disabled={submitting} size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8">
-                  {submitting ? "Sending…" : "Submit"}
-                </Button>
-              </div>
-            </form>
+            <div className="lg:col-span-3 rounded-lg bg-background border border-border overflow-hidden">
+              <iframe
+                src={FORM_URL}
+                title="Join the Campaign"
+                className="w-full h-[900px]"
+                loading="lazy"
+              >
+                Loading…
+              </iframe>
+            </div>
           </div>
         </div>
       </section>
