@@ -3,6 +3,8 @@ import PageHeader from "@/components/site/PageHeader";
 import { useState } from "react";
 import SectionHeading from "@/components/site/SectionHeading";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { Download } from "lucide-react";
 
 // Standalone Agenda page content. Independent from the home page section.
 const agendaItems = [
@@ -73,6 +75,18 @@ export default function Agenda() {
               <p className="text-foreground/85 leading-relaxed">{item.body}</p>
             </article>
           ))}
+        </div>
+        <div className="container max-w-5xl mt-14 pt-10 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <p className="font-extrabold text-lg text-foreground">Read the Full Manifesto</p>
+            <p className="text-sm text-muted-foreground mt-1">Download the complete agenda as a PDF document.</p>
+          </div>
+          <Button asChild size="lg" className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-7 shrink-0">
+            <a href="https://drive.google.com/file/d/19b2LPOquARN-awyNuTEYPcb59SX4VsC-/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+              <Download className="h-4 w-4 mr-2" />
+              Download Manifesto
+            </a>
+          </Button>
         </div>
       </section>
     </Layout>
