@@ -24,7 +24,7 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row items-center gap-3 text-sm text-muted-foreground">
             <a href="mailto:millergeorgeadvocates@gmail.com" className="flex items-center gap-1.5 hover:text-primary transition-colors">
               <Mail className="h-3.5 w-3.5" />
-              millergeorgeadvocates@gmail.com
+              cecilawach@gmail.com
             </a>
             <span className="hidden sm:inline text-border">|</span>
             <a href="tel:+254714736876" className="flex items-center gap-1.5 hover:text-primary transition-colors">
