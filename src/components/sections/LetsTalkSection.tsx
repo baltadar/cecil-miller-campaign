@@ -17,14 +17,14 @@ export default function LetsTalkSection() {
         {/* Contact Details */}
         <div className="grid md:grid-cols-[2fr_1fr_1fr] gap-6 max-w-5xl mx-auto">
           <a
-            href={`mailto:${SOCIAL.email}`}
+            href="mailto:cecilawach@gmail.com"
             className="group flex items-start gap-4 p-6 bg-background border border-border hover:border-primary transition-colors"
           >
             <Mail className="h-6 w-6 text-primary shrink-0 mt-1" />
             <div className="min-w-0">
               <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">Email</div>
               <div className="font-medium whitespace-nowrap group-hover:text-primary transition-colors">
-                {SOCIAL.email}
+                cecilawach@gmail.com
               </div>
             </div>
           </a>
