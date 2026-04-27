@@ -17,7 +17,7 @@ export default function AgendaSection({ preview = true }: { preview?: boolean })
 
         <div className="flex justify-center mb-10">
           <Button asChild size="lg" className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-7">
-            <a href="https://drive.google.com/file/d/19b2LPOquARN-awyNuTEYPcb59SX4VsC-/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+            <a href="https://drive.google.com/file/d/1uzgePW1RjGx5E8lkB4h4UCCJY8G7XDwt/view?usp=sharing" target="_blank" rel="noopener noreferrer">
               <Download className="h-4 w-4 mr-2" />
               Download Manifesto
             </a>
