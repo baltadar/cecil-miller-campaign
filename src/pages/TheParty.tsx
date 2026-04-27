@@ -1,6 +1,7 @@
 import Layout from "@/components/site/Layout";
 import PageHeader from "@/components/site/PageHeader";
 import SectionHeading from "@/components/site/SectionHeading";
+import { MapPin, Clock } from "lucide-react";
 
 // Standalone Roots Party page. Independent from the home page section.
 const partyValues = [
@@ -84,6 +85,49 @@ export default function TheParty() {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+      </section>
+      <section className="py-20 md:py-28 bg-secondary/30 border-t border-border">
+        <div className="container max-w-6xl">
+          <SectionHeading
+            eyebrow="Our Promise"
+            title="Our Commitment to Kenyans"
+            description="Tingiza Mti! Wakati ni Sasa!"
+          />
+          <div className="grid lg:grid-cols-5 gap-8">
+            <div className="lg:col-span-3 space-y-5 text-foreground/85 leading-relaxed">
+              <p>
+                The Roots Party of Kenya is committed to building a nation that is self-sufficient, prosperous, just, and inclusive. By addressing the core issues of corruption, economic independence, youth and women empowerment, inclusive governance, education, healthcare, and industrialization, we will create a Kenya where all Kenyans can thrive.
+              </p>
+              <p>
+                It is time to take back our future and build a nation grounded in integrity, sustainability, and shared prosperity.
+              </p>
+              <p className="text-primary font-extrabold uppercase tracking-wide">
+                Tingiza Mti! Wakati ni Sasa!
+              </p>
+            </div>
+            <aside className="lg:col-span-2">
+              <div className="p-6 rounded-lg bg-background border border-border border-l-2 border-l-primary">
+                <h3 className="font-extrabold text-xs uppercase tracking-widest text-primary mb-1">
+                  Roots Party of Kenya
+                </h3>
+                <p className="font-bold text-foreground text-lg mb-5">Head Office</p>
+                <ul className="space-y-4 text-sm">
+                  <li className="flex items-start gap-3">
+                    <MapPin className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                    <span>Cara House, Karen Road,<br />Nairobi, Kenya</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Clock className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                    <div>
+                      <p className="font-semibold text-foreground">Hours</p>
+                      <p className="text-muted-foreground">Open today · 09:00 – 17:00</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
