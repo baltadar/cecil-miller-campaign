@@ -6,7 +6,6 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 
-// Standalone Agenda page content. Independent from the home page section.
 const agendaItems = [
   {
     id: "youth",
@@ -45,6 +44,17 @@ export default function Agenda() {
       <section className="py-20 md:py-28 bg-secondary/30 border-y border-border">
         <div className="container">
           <SectionHeading eyebrow="My Agenda" title="A Manifesto Built on Lived Reality" description="Five priorities that will shape my work in the Senate for every Nairobian." />
+
+          {/* Download button below heading */}
+          <div className="flex justify-center mb-10">
+            <Button asChild size="lg" className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-7">
+              <a href="https://drive.google.com/file/d/19b2LPOquARN-awyNuTEYPcb59SX4VsC-/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                <Download className="h-4 w-4 mr-2" />
+                Download Manifesto
+              </a>
+            </Button>
+          </div>
+
           <div className="flex flex-wrap gap-2 md:gap-3 justify-center mb-10">
             {agendaItems.map((item) => (
               <button
