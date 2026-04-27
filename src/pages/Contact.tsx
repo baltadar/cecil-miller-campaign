@@ -5,6 +5,7 @@ import { Mail, MapPin, Phone, Facebook, Instagram, Youtube } from "lucide-react"
 import { SOCIAL } from "@/content/social";
 
 const FORM_URL = "https://forms.gle/ii3i3bn21iQFy5Zw8";
+const CAMPAIGN_EMAIL = "cecilawach@gmail.com";
 
 const XIcon = () => (
   <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current" aria-hidden>
@@ -28,9 +29,18 @@ export default function Contact() {
               <div className="p-6 rounded-lg bg-background border border-border border-l-2 border-l-primary">
                 <h3 className="font-extrabold text-xl mb-4">Reach the Campaign</h3>
                 <ul className="space-y-3 text-sm">
-                  <li className="flex items-start gap-3"><Mail className="h-5 w-5 text-primary mt-0.5" /><a href={`mailto:${SOCIAL.email}`} className="hover:text-primary">{SOCIAL.email}</a></li>
-                  <li className="flex items-start gap-3"><Phone className="h-5 w-5 text-primary mt-0.5" /><a href={`tel:${SOCIAL.phoneHref}`} className="hover:text-primary">{SOCIAL.phone}</a></li>
-                  <li className="flex items-start gap-3"><MapPin className="h-5 w-5 text-primary mt-0.5" /><span>Campaign HQ · Nairobi CBD</span></li>
+                  <li className="flex items-start gap-3">
+                    <Mail className="h-5 w-5 text-primary mt-0.5" />
+                    <a href={`mailto:${CAMPAIGN_EMAIL}`} className="hover:text-primary">{CAMPAIGN_EMAIL}</a>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Phone className="h-5 w-5 text-primary mt-0.5" />
+                    <a href={`tel:${SOCIAL.phoneHref}`} className="hover:text-primary">{SOCIAL.phone}</a>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <MapPin className="h-5 w-5 text-primary mt-0.5" />
+                    <span>Campaign HQ · Nairobi CBD</span>
+                  </li>
                 </ul>
                 <div className="flex items-center gap-4 mt-5 pt-5 border-t border-border">
                   <a href={SOCIAL.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-foreground hover:text-primary"><Facebook className="h-5 w-5" /></a>
@@ -48,7 +58,6 @@ export default function Contact() {
                 Open Form in New Tab →
               </a>
             </div>
-
             <div className="lg:col-span-3 rounded-lg bg-background border border-border overflow-hidden">
               <iframe
                 src={FORM_URL}
