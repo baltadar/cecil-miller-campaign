@@ -2,6 +2,7 @@ import Layout from "@/components/site/Layout";
 import PageHeader from "@/components/site/PageHeader";
 import SectionHeading from "@/components/site/SectionHeading";
 import { MapPin, Clock } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 // Standalone Roots Party page. Independent from the home page section.
 const partyValues = [
@@ -57,6 +58,13 @@ export default function TheParty() {
                   <h4 className="font-bold text-party text-xs uppercase tracking-widest mb-2">Mission</h4>
                   <p className="text-sm text-background/80">Lead Kenya's transformation through patriotism, social justice, gender parity, youth empowerment, and global repositioning.</p>
                 </div>
+              </div>
+              <div className="mt-8">
+                <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-7">
+                  <a href="https://rootspartyofkenya.org/" target="_blank" rel="noopener noreferrer">
+                    Visit the Official Party Website
+                  </a>
+                </Button>
               </div>
             </div>
           </div>
