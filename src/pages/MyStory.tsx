@@ -57,10 +57,10 @@ export default function MyStory() {
         <div className="container max-w-3xl prose prose-lg">
           <h2 className="text-3xl font-extrabold mb-6">The Road Ahead</h2>
           <p className="text-foreground/85 leading-relaxed">
-            My candidacy is not about a title — it is about the people who built me: the bodaboda rider in Kawangware, the mama mboga in Gikomba, the law student in Parklands. I am running because Nairobi deserves a Senator who has lived their struggle and trained to defend it.
+            My candidacy is not about empty titles. It is about the people who built me: the bodaboda rider in Kawangware, the mama mboga in Gikomba, the law student in Parklands. I am running because Nairobi deserves a Senator who has lived their struggle and is trained to defend it.
           </p>
           <p className="mt-4 text-foreground/85 leading-relaxed">
-            With your support, we will build a Nairobi where opportunity is not a privilege — it is a right.
+            With your support, we will build a Nairobi where opportunity is a right for all.
           </p>
         </div>
       </section>
