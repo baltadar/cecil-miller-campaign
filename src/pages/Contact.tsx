@@ -5,7 +5,6 @@ import { Mail, MapPin, Phone, Facebook, Instagram, Youtube } from "lucide-react"
 import { SOCIAL } from "@/content/social";
 
 const FORM_URL = "https://forms.gle/ii3i3bn21iQFy5Zw8";
-const FORM_EMBED_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf-PLACEHOLDER/viewform?embedded=true";
 
 const XIcon = () => (
   <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current" aria-hidden>
@@ -52,7 +51,7 @@ export default function Contact() {
 
             <div className="lg:col-span-3 rounded-lg bg-background border border-border overflow-hidden">
               <iframe
-                src={FORM_URL.replace("forms.gle/ii3i3bn21iQFy5Zw8", "docs.google.com/forms/d/e/1FAIpQLSf-PLACEHOLDER/viewform?embedded=true")}
+                src={FORM_URL}
                 title="Join the Campaign"
                 className="w-full h-[900px]"
                 loading="lazy"
