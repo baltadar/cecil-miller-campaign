@@ -1,13 +1,70 @@
 import Layout from "@/components/site/Layout";
 import PageHeader from "@/components/site/PageHeader";
-import AgendaSection from "@/components/sections/AgendaSection";
-import { agendaItems } from "@/content/agenda";
+import { useState } from "react";
+import SectionHeading from "@/components/site/SectionHeading";
+import { cn } from "@/lib/utils";
+
+// Standalone Agenda page content. Independent from the home page section.
+const agendaItems = [
+  {
+    id: "youth",
+    title: "Youth Empowerment & Skills",
+    body: "Nairobi is Africa's youngest capital — and yet thousands of qualified young people leave school each year with nowhere to go. As Senator, I will fight for a fully-funded, demand-driven TVET pipeline, county-level apprenticeship guarantees, and direct partnerships between Nairobi's industry leaders and our youth so that 'tarmacking' stops being a rite of passage.",
+  },
+  {
+    id: "workers",
+    title: "Workers' Rights & Gig Economy",
+    body: "Bodaboda riders, ride-hailing drivers, mama mbogas and gig workers power Nairobi's economy without a safety net. I will champion legislation guaranteeing minimum earnings, transparent platform fees, mandatory insurance, and pension access for every worker — formal or informal.",
+  },
+  {
+    id: "justice",
+    title: "Access to Justice",
+    body: "Justice should never depend on income. Drawing on years as an advocate and LSK Coast Chair, I will push for county legal-aid clinics in every sub-county, fast-track small-claims courts, and Senate oversight on police accountability and prosecutorial fairness.",
+  },
+  {
+    id: "business",
+    title: "Ease of Doing Business",
+    body: "From Gikomba to Eastleigh to Westlands, Nairobi's hustlers carry the city. I will sponsor reforms to consolidate licensing, cap county levies, digitise permits, and give SMEs real protection from arbitrary harassment by enforcement officers.",
+  },
+  {
+    id: "health",
+    title: "Quality & Affordable Healthcare",
+    body: "Every Nairobian — from Kibera to Karen — deserves dignified healthcare. I will push for fully-equipped Level 4 facilities in every sub-county, transparent SHA implementation, and mental-health services integrated into primary care.",
+  },
+];
 
 export default function Agenda() {
+  const [active, setActive] = useState<string>(agendaItems[0].id);
+  const current = agendaItems.find((a) => a.id === active)!;
+
   return (
     <Layout>
       <PageHeader eyebrow="Agenda & Manifesto" title="The Plan for Nairobi" description="Five priorities, grounded in the law, shaped by the streets, and built for every Nairobian." />
-      <AgendaSection preview={false} />
+      <section className="py-20 md:py-28 bg-secondary/30 border-y border-border">
+        <div className="container">
+          <SectionHeading eyebrow="My Agenda" title="A Manifesto Built on Lived Reality" description="Five priorities that will shape my work in the Senate for every Nairobian." />
+          <div className="flex flex-wrap gap-2 md:gap-3 justify-center mb-10">
+            {agendaItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => setActive(item.id)}
+                className={cn(
+                  "px-5 py-2.5 rounded-full text-sm font-semibold transition-all border",
+                  active === item.id
+                    ? "bg-primary text-primary-foreground border-primary"
+                    : "bg-primary/10 text-foreground/80 border-primary/20 hover:bg-primary/20 hover:border-primary hover:text-foreground"
+                )}
+              >
+                {item.title}
+              </button>
+            ))}
+          </div>
+          <div className="max-w-4xl mx-auto bg-background rounded-lg p-8 md:p-10 border border-border border-l-2 border-l-primary animate-fade-in">
+            <h3 className="text-2xl md:text-3xl font-extrabold text-foreground mb-4">{current.title}</h3>
+            <p className="text-foreground/85 leading-relaxed text-lg">{current.body}</p>
+          </div>
+        </div>
+      </section>
       <section className="py-20 bg-background">
         <div className="container max-w-5xl space-y-10">
           {agendaItems.map((item) => (
