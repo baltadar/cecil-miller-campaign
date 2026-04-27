@@ -16,7 +16,7 @@ export default function LetsTalkSection() {
 
         {/* Contact Details */}
         <div className="grid md:grid-cols-[2fr_1fr_1fr] gap-6 max-w-5xl mx-auto">
-          
+          <a
             href={`mailto:${SOCIAL.email}`}
             className="group flex items-start gap-4 p-6 bg-background border border-border hover:border-primary transition-colors"
           >
@@ -29,7 +29,7 @@ export default function LetsTalkSection() {
             </div>
           </a>
 
-          
+          <a
             href={`tel:${SOCIAL.phoneHref}`}
             className="group flex items-start gap-4 p-6 bg-background border border-border hover:border-primary transition-colors"
           >
@@ -40,7 +40,7 @@ export default function LetsTalkSection() {
             </div>
           </a>
 
-          
+          <a
             href={FORM_URL}
             target="_blank"
             rel="noopener noreferrer"
