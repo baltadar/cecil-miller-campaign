@@ -1,44 +1,55 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/site/SectionHeading";
 import { YOUTUBE_VIDEOS } from "@/content/social";
 
-function YouTubeEmbed({ id, title }: { id: string; title: string }) {
-  const [active, setActive] = useState(false);
+function YouTubeThumbnail({ id, title }: { id: string; title: string }) {
+  const url = `https://www.youtube.com/watch?v=${id}`;
 
-  return active ? (
-    <iframe
-      src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1`}
-      title={title}
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      className="h-full w-full"
-    />
-  ) : (
-    <button
-      onClick={() => setActive(true)}
-      className="relative h-full w-full group/play"
-      aria-label={`Play ${title}`}
+  return (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`Watch ${title} on YouTube`}
+      className="relative block h-full w-full group/play"
     >
       <img
         src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`}
         alt={title}
         className="h-full w-full object-cover"
       />
-      {/* Play button overlay */}
+
+      {/* Dark overlay on hover */}
+      <span className="absolute inset-0 bg-black/20 opacity-0 group-hover/play:opacity-100 transition-opacity" />
+
+      {/* Play button */}
       <span className="absolute inset-0 flex items-center justify-center">
-        <span className="flex items-center justify-center w-16 h-16 rounded-full bg-black/70 group-hover/play:bg-primary transition-colors">
+        <span className="flex items-center justify-center w-16 h-16 rounded-full bg-black/70 group-hover/play:bg-primary transition-colors duration-200">
           <svg
             className="w-7 h-7 text-white translate-x-0.5"
             fill="currentColor"
             viewBox="0 0 24 24"
+            aria-hidden="true"
           >
             <path d="M8 5v14l11-7z" />
           </svg>
         </span>
       </span>
-    </button>
+
+      {/* YouTube logo badge */}
+      <span className="absolute bottom-2 right-2 opacity-80">
+        <svg
+          className="w-8 h-8"
+          viewBox="0 0 24 24"
+          fill="#FF0000"
+          aria-hidden="true"
+        >
+          <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8z" />
+          <path fill="#fff" d="M9.75 15.5v-7l6.25 3.5-6.25 3.5z" />
+        </svg>
+      </span>
+    </a>
   );
 }
 
@@ -57,7 +68,7 @@ export default function MediaSection({ preview = true }: { preview?: boolean }) 
           {videos.map((v) => (
             <article key={v.id} className="group">
               <div className="aspect-video w-full overflow-hidden border border-border bg-foreground/5">
-                <YouTubeEmbed id={v.id} title={v.title} />
+                <YouTubeThumbnail id={v.id} title={v.title} />
               </div>
               <h3 className="mt-4 font-bold text-foreground text-lg leading-snug">
                 <a
@@ -72,6 +83,7 @@ export default function MediaSection({ preview = true }: { preview?: boolean }) 
             </article>
           ))}
         </div>
+
         {preview && (
           <div className="text-center mt-12">
             <Button
