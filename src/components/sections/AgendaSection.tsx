@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/site/SectionHeading";
 import { agendaItems } from "@/content/agenda";
 import { cn } from "@/lib/utils";
+import { Download } from "lucide-react";
 
 export default function AgendaSection({ preview = true }: { preview?: boolean }) {
   const [active, setActive] = useState<string>(agendaItems[0].id);
@@ -13,6 +14,16 @@ export default function AgendaSection({ preview = true }: { preview?: boolean })
     <section id="agenda" className="py-20 md:py-28 bg-secondary/30 border-y border-border">
       <div className="container">
         <SectionHeading eyebrow="My Agenda" title="A Manifesto Built on Lived Reality" description="Five priorities that will shape my work in the Senate for every Nairobian." />
+
+        <div className="flex justify-center mb-10">
+          <Button asChild size="lg" className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-7">
+            <a href="https://drive.google.com/file/d/19b2LPOquARN-awyNuTEYPcb59SX4VsC-/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+              <Download className="h-4 w-4 mr-2" />
+              Download Manifesto
+            </a>
+          </Button>
+        </div>
+
         <div className="flex flex-wrap gap-2 md:gap-3 justify-center mb-10">
           {agendaItems.map((item) => (
             <button
