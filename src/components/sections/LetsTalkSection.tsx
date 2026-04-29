@@ -6,6 +6,13 @@ import visaLogo from "@/assets/visa-logo.jpg";
 
 const FORM_URL = "https://forms.gle/ii3i3bn21iQFy5Zw8";
 
+// IntaSend hosted checkout — replace VITE_INTASEND_PUBLIC_KEY with your key
+// when you sign up at https://intasend.com. Until then, this opens IntaSend's
+// demo checkout so the button is visible and styled.
+const INTASEND_PUBLIC_KEY =
+  import.meta.env.VITE_INTASEND_PUBLIC_KEY ?? "ISPubKey_test_demo";
+const INTASEND_CHECKOUT_URL = `https://payment.intasend.com/pay/?public_key=${INTASEND_PUBLIC_KEY}&currency=KES&comment=Cecil+Miller+Campaign+Donation`;
+
 export default function LetsTalkSection() {
   return (
     <section id="lets-talk" className="py-20 md:py-28 bg-foreground/5 border-t border-border">
@@ -58,78 +65,77 @@ export default function LetsTalkSection() {
 
         {/* Donate / Contribute */}
         <div className="max-w-5xl mx-auto mt-4">
-          <div className="relative border-2 border-primary/40 bg-gradient-to-br from-primary/5 via-background to-primary-glow/10 p-6 md:p-10 shadow-elegant overflow-hidden">
+          <div className="relative border-2 border-primary/40 bg-gradient-to-br from-primary/5 via-background to-primary-glow/10 p-5 md:p-6 shadow-elegant overflow-hidden">
             <div className="absolute inset-x-0 top-0 h-1 bg-gradient-brand" />
 
-            <div className="flex flex-col items-center text-center mb-8">
-              <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-gradient-brand shadow-elegant mb-3">
-                <Heart className="h-6 w-6 text-primary-foreground" fill="currentColor" />
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-5">
+              <div className="flex items-center gap-3">
+                <div className="inline-flex items-center justify-center h-9 w-9 rounded-full bg-gradient-brand shadow-elegant shrink-0">
+                  <Heart className="h-4 w-4 text-primary-foreground" fill="currentColor" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-foreground leading-tight">
+                    Support the Campaign
+                  </h3>
+                  <p className="text-xs text-muted-foreground">
+                    Every contribution fuels the movement.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-                Support the Campaign
-              </h3>
-              <p className="text-sm text-muted-foreground max-w-md">
-                Every contribution fuels the movement. Choose your preferred way to give.
-              </p>
+              <a
+                href={INTASEND_CHECKOUT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-gradient-brand text-primary-foreground font-semibold text-sm px-5 py-2.5 shadow-elegant hover:opacity-90 transition-opacity"
+              >
+                <Heart className="h-4 w-4" fill="currentColor" />
+                Donate Now
+              </a>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-5">
+            <div className="grid md:grid-cols-2 gap-3">
               {/* M-Pesa */}
-              <div className="relative flex flex-col p-6 bg-background border border-border hover:border-primary hover:shadow-card transition-all group">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="h-11 w-11 rounded-full bg-[#4caf50]/10 flex items-center justify-center shrink-0">
-                      <Smartphone className="h-5 w-5 text-[#4caf50]" />
-                    </div>
-                    <div>
-                      <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Mobile Money</div>
-                      <div className="font-semibold text-foreground">M-Pesa Paybill</div>
-                    </div>
+              <div className="flex flex-col p-4 bg-background border border-border hover:border-primary transition-colors">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-2">
+                    <Smartphone className="h-4 w-4 text-[#4caf50]" />
+                    <span className="text-xs font-semibold text-foreground uppercase tracking-wide">M-Pesa Paybill</span>
                   </div>
-                  <img src={mpesaLogo} alt="M-Pesa" className="h-8 w-auto object-contain" />
+                  <img src={mpesaLogo} alt="M-Pesa" className="h-5 w-auto object-contain" />
                 </div>
-                <div className="space-y-2 text-sm border-t border-border pt-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Business No.</span>
-                    <span className="font-mono font-bold text-lg text-primary">516600</span>
+                <div className="grid grid-cols-2 gap-2 text-xs">
+                  <div>
+                    <div className="text-muted-foreground">Business No.</div>
+                    <div className="font-mono font-bold text-base text-primary">516600</div>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Account No.</span>
-                    <span className="font-mono font-bold text-lg text-primary">569263001</span>
+                  <div>
+                    <div className="text-muted-foreground">Account No.</div>
+                    <div className="font-mono font-bold text-base text-primary">569263001</div>
                   </div>
                 </div>
               </div>
 
               {/* Bank Transfer */}
-              <div className="relative flex flex-col p-6 bg-background border border-border hover:border-primary hover:shadow-card transition-all group">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="h-11 w-11 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                      <Building2 className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Card / Bank</div>
-                      <div className="font-semibold text-foreground">Diamond Trust Bank</div>
-                    </div>
+              <div className="flex flex-col p-4 bg-background border border-border hover:border-primary transition-colors">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-2">
+                    <Building2 className="h-4 w-4 text-primary" />
+                    <span className="text-xs font-semibold text-foreground uppercase tracking-wide">Diamond Trust Bank</span>
                   </div>
-                  <img src={visaLogo} alt="Visa / Mastercard" className="h-8 w-auto object-contain" />
+                  <img src={visaLogo} alt="Visa / Mastercard" className="h-5 w-auto object-contain" />
                 </div>
-                <div className="space-y-2 text-sm border-t border-border pt-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Account Name</span>
-                    <span className="font-semibold text-foreground">Cecil Miller</span>
+                <div className="grid grid-cols-2 gap-2 text-xs">
+                  <div>
+                    <div className="text-muted-foreground">Account Name</div>
+                    <div className="font-semibold text-foreground text-sm">Cecil Miller</div>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Account No.</span>
-                    <span className="font-mono font-bold text-lg text-primary">569263001</span>
+                  <div>
+                    <div className="text-muted-foreground">Account No.</div>
+                    <div className="font-mono font-bold text-base text-primary">569263001</div>
                   </div>
                 </div>
               </div>
             </div>
-
-            <p className="text-center text-xs text-muted-foreground mt-6">
-              Asante sana 🙏 — your support keeps the movement going.
-            </p>
           </div>
         </div>
 
