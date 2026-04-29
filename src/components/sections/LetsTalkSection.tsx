@@ -1,10 +1,44 @@
-import { Mail, Phone, ExternalLink, Heart, Building2, Smartphone, ArrowRight } from "lucide-react";
+import { Mail, Phone, ExternalLink, Heart, Building2, Smartphone, ArrowRight, Copy, Check } from "lucide-react";
+import { useState } from "react";
+import { toast } from "@/hooks/use-toast";
 import SectionHeading from "@/components/site/SectionHeading";
 import { SOCIAL } from "@/content/social";
 import mpesaLogo from "@/assets/mpesa-logo.jpg";
 import visaLogo from "@/assets/visa-logo.jpg";
 
 const FORM_URL = "https://forms.gle/ii3i3bn21iQFy5Zw8";
+
+function CopyableValue({ value, label }: { value: string; label: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(value);
+      setCopied(true);
+      toast({ title: "Copied!", description: `${label} copied to clipboard.` });
+      setTimeout(() => setCopied(false), 1500);
+    } catch {
+      toast({ title: "Copy failed", description: "Please copy manually.", variant: "destructive" });
+    }
+  };
+
+  return (
+    <button
+      type="button"
+      onClick={handleCopy}
+      title={`Tap to copy ${label}`}
+      aria-label={`Copy ${label}: ${value}`}
+      className="group/copy inline-flex items-center gap-1.5 font-mono font-bold text-base text-primary hover:text-primary-glow transition-colors text-left"
+    >
+      <span className="underline decoration-dotted decoration-primary/40 underline-offset-2">{value}</span>
+      {copied ? (
+        <Check className="h-3.5 w-3.5 text-[#4caf50] shrink-0" />
+      ) : (
+        <Copy className="h-3.5 w-3.5 opacity-50 group-hover/copy:opacity-100 transition-opacity shrink-0" />
+      )}
+    </button>
+  );
+}
 
 export default function LetsTalkSection() {
   return (
@@ -99,11 +133,11 @@ export default function LetsTalkSection() {
                 <div className="grid grid-cols-2 gap-2 text-xs">
                   <div>
                     <div className="text-muted-foreground">Business No.</div>
-                    <div className="font-mono font-bold text-base text-primary">516600</div>
+                    <CopyableValue value="516600" label="Paybill business number" />
                   </div>
                   <div>
                     <div className="text-muted-foreground">Account No.</div>
-                    <div className="font-mono font-bold text-base text-primary">569263001</div>
+                    <CopyableValue value="569263001" label="Paybill account number" />
                   </div>
                 </div>
               </div>
@@ -124,7 +158,7 @@ export default function LetsTalkSection() {
                   </div>
                   <div>
                     <div className="text-muted-foreground">Account No.</div>
-                    <div className="font-mono font-bold text-base text-primary">569263001</div>
+                    <CopyableValue value="569263001" label="Bank account number" />
                   </div>
                 </div>
               </div>
