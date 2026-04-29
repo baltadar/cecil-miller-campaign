@@ -6,13 +6,6 @@ import visaLogo from "@/assets/visa-logo.jpg";
 
 const FORM_URL = "https://forms.gle/ii3i3bn21iQFy5Zw8";
 
-// IntaSend hosted checkout — replace VITE_INTASEND_PUBLIC_KEY with your key
-// when you sign up at https://intasend.com. Until then, this opens IntaSend's
-// demo checkout so the button is visible and styled.
-const INTASEND_PUBLIC_KEY =
-  import.meta.env.VITE_INTASEND_PUBLIC_KEY ?? "ISPubKey_test_demo";
-const INTASEND_CHECKOUT_URL = `https://payment.intasend.com/pay/?public_key=${INTASEND_PUBLIC_KEY}&currency=KES&comment=Cecil+Miller+Campaign+Donation`;
-
 export default function LetsTalkSection() {
   return (
     <section id="lets-talk" className="py-20 md:py-28 bg-foreground/5 border-t border-border">
@@ -82,15 +75,14 @@ export default function LetsTalkSection() {
                   </p>
                 </div>
               </div>
-              <a
-                href={INTASEND_CHECKOUT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-gradient-brand text-primary-foreground font-semibold text-sm px-5 py-2.5 shadow-elegant hover:opacity-90 transition-opacity"
+              <div
+                aria-disabled="true"
+                title="Online donations coming soon"
+                className="inline-flex items-center justify-center gap-2 bg-muted text-muted-foreground font-semibold text-sm px-5 py-2.5 cursor-not-allowed select-none border border-border"
               >
-                <Heart className="h-4 w-4" fill="currentColor" />
-                Donate Now
-              </a>
+                <Heart className="h-4 w-4" />
+                Donate Online (Coming Soon)
+              </div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-3">
