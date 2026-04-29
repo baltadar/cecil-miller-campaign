@@ -1,4 +1,4 @@
-import { Mail, Phone, ExternalLink, Heart, Building2, Smartphone } from "lucide-react";
+import { Mail, Phone, ExternalLink, Heart, Building2, Smartphone, ArrowRight } from "lucide-react";
 import SectionHeading from "@/components/site/SectionHeading";
 import { SOCIAL } from "@/content/social";
 import mpesaLogo from "@/assets/mpesa-logo.jpg";
@@ -78,10 +78,11 @@ export default function LetsTalkSection() {
               <div
                 aria-disabled="true"
                 title="Online donations coming soon"
-                className="inline-flex items-center justify-center gap-2 bg-muted text-muted-foreground font-semibold text-sm px-5 py-2.5 cursor-not-allowed select-none border border-border"
+                className="inline-flex items-center justify-center gap-1.5 bg-muted text-muted-foreground font-semibold text-xs px-4 py-2 cursor-not-allowed select-none border border-border"
               >
-                <Heart className="h-4 w-4" />
+                <Heart className="h-3.5 w-3.5" />
                 Donate Online (Coming Soon)
+                <ArrowRight className="h-3.5 w-3.5" />
               </div>
             </div>
 
