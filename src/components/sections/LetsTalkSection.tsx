@@ -17,15 +17,15 @@ export default function LetsTalkSection() {
         />
 
         {/* Contact Details */}
-        <div className="grid md:grid-cols-[2fr_1fr_1fr] gap-6 max-w-5xl mx-auto">
+        <div className="grid sm:grid-cols-3 gap-3 max-w-4xl mx-auto">
           <a
             href="mailto:cecilawach@gmail.com"
-            className="group flex items-start gap-4 p-6 bg-background border border-border hover:border-primary transition-colors"
+            className="group flex items-center gap-3 px-4 py-3 bg-background border border-border hover:border-primary transition-colors min-w-0"
           >
-            <Mail className="h-6 w-6 text-primary shrink-0 mt-1" />
-            <div className="min-w-0">
-              <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">Email</div>
-              <div className="font-medium whitespace-nowrap group-hover:text-primary transition-colors">
+            <Mail className="h-4 w-4 text-primary shrink-0" />
+            <div className="min-w-0 flex-1">
+              <div className="text-[10px] uppercase tracking-wider text-muted-foreground leading-none mb-1">Email</div>
+              <div className="text-sm font-medium truncate group-hover:text-primary transition-colors">
                 cecilawach@gmail.com
               </div>
             </div>
@@ -33,12 +33,12 @@ export default function LetsTalkSection() {
 
           <a
             href={`tel:${SOCIAL.phoneHref}`}
-            className="group flex items-start gap-4 p-6 bg-background border border-border hover:border-primary transition-colors"
+            className="group flex items-center gap-3 px-4 py-3 bg-background border border-border hover:border-primary transition-colors min-w-0"
           >
-            <Phone className="h-6 w-6 text-primary shrink-0 mt-1" />
-            <div>
-              <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">Phone</div>
-              <div className="font-medium group-hover:text-primary transition-colors">{SOCIAL.phone}</div>
+            <Phone className="h-4 w-4 text-primary shrink-0" />
+            <div className="min-w-0 flex-1">
+              <div className="text-[10px] uppercase tracking-wider text-muted-foreground leading-none mb-1">Phone</div>
+              <div className="text-sm font-medium truncate group-hover:text-primary transition-colors">{SOCIAL.phone}</div>
             </div>
           </a>
 
@@ -46,12 +46,12 @@ export default function LetsTalkSection() {
             href={FORM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-start gap-4 p-6 bg-foreground text-background border border-foreground hover:bg-primary hover:border-primary transition-colors"
+            className="group flex items-center gap-3 px-4 py-3 bg-foreground text-background border border-foreground hover:bg-primary hover:border-primary transition-colors min-w-0"
           >
-            <ExternalLink className="h-6 w-6 shrink-0 mt-1" />
-            <div>
-              <div className="text-xs uppercase tracking-wider opacity-70 mb-1">Get Involved</div>
-              <div className="font-semibold">Join the Campaign</div>
+            <ExternalLink className="h-4 w-4 shrink-0" />
+            <div className="min-w-0 flex-1">
+              <div className="text-[10px] uppercase tracking-wider opacity-70 leading-none mb-1">Get Involved</div>
+              <div className="text-sm font-semibold truncate">Join the Campaign</div>
             </div>
           </a>
         </div>
