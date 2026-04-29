@@ -71,7 +71,7 @@ export default function LetsTalkSection() {
                     Support the Campaign
                   </h3>
                   <p className="text-xs text-muted-foreground">
-                    Every contribution fuels the movement.
+                    You can channel your contribution via the details shown below.
                   </p>
                 </div>
               </div>
