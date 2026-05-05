@@ -12,6 +12,7 @@ const videos = [
 
 const photos = [
   { src: "https://res.cloudinary.com/dbgcwdes6/image/upload/v1777268144/Screenshot_2026-04-27_at_08.35.22_cww6a4.png", alt: "Hon. Cecil Miller on the campaign trail" },
+  { src: "https://res.cloudinary.com/dbgcwdes6/image/upload/v1777972477/WhatsApp_Image_2026-05-05_at_11.26.53_1_kwbj96.jpg" },
   { src: "https://res.cloudinary.com/dbgcwdes6/image/upload/v1777268161/WhatsApp_Image_2026-04-25_at_12.37.04_lhpw1t.jpg", alt: "Hon. Cecil Miller engaging with Nairobi residents" },
   { src: "https://res.cloudinary.com/dbgcwdes6/image/upload/v1777271182/Screenshot_2026-04-27_at_09.19.09_jdaf2k.png", alt: "Hon. Cecil Miller on the campaign trail" },
   { src: "https://res.cloudinary.com/dbgcwdes6/image/upload/v1777271182/Screenshot_2026-04-27_at_09.21.08_zllvwg.png", alt: "Hon. Cecil Miller on the campaign trail" },
@@ -22,7 +23,6 @@ const photos = [
   { src: "https://res.cloudinary.com/dbgcwdes6/image/upload/v1777271183/Screenshot_2026-04-27_at_09.19.25_metjh3.png", alt: "Hon. Cecil Miller on the campaign trail" },
   { src: "https://res.cloudinary.com/dbgcwdes6/image/upload/v1777271184/Screenshot_2026-04-27_at_09.21.53_o8rnjy.png", alt: "Hon. Cecil Miller on the campaign trail" },
   { src: "https://res.cloudinary.com/dbgcwdes6/image/upload/v1777373230/WhatsApp_Image_2026-04-27_at_23.30.03_i7lrcz.jpg", alt: "Hon. Cecil Miller on the campaign trail" },
-  { src: "https://res.cloudinary.com/dbgcwdes6/image/upload/v1777971972/WhatsApp_Image_2026-05-05_at_11.26.53_rmne0w.jpg", alt: "Hon. Cecil Miller on the campaign trail" },
   { src: "https://res.cloudinary.com/dbgcwdes6/image/upload/v1777268162/WhatsApp_Image_2026-04-25_at_12.36.59_kovknp.jpg", alt: "Hon. Cecil Miller at a community event" },
 ];
 
