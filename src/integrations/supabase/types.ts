@@ -14,7 +14,51 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      donations: {
+        Row: {
+          amount: number
+          created_at: string
+          currency: string
+          donor_email: string
+          donor_name: string | null
+          id: string
+          message: string | null
+          paid_at: string | null
+          raw_event: Json | null
+          reference: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          amount: number
+          created_at?: string
+          currency: string
+          donor_email: string
+          donor_name?: string | null
+          id?: string
+          message?: string | null
+          paid_at?: string | null
+          raw_event?: Json | null
+          reference: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          amount?: number
+          created_at?: string
+          currency?: string
+          donor_email?: string
+          donor_name?: string | null
+          id?: string
+          message?: string | null
+          paid_at?: string | null
+          raw_event?: Json | null
+          reference?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
