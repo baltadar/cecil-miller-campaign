@@ -10,6 +10,7 @@ import Agenda from "./pages/Agenda.tsx";
 import TheParty from "./pages/TheParty.tsx";
 import Media from "./pages/Media.tsx";
 import Contact from "./pages/Contact.tsx";
+import DonateCallback from "./pages/DonateCallback.tsx";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/the-party" element={<TheParty />} />
           <Route path="/media" element={<Media />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/donate/callback" element={<DonateCallback />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

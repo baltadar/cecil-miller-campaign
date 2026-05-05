@@ -5,6 +5,7 @@ import SectionHeading from "@/components/site/SectionHeading";
 import { SOCIAL } from "@/content/social";
 import mpesaLogo from "@/assets/mpesa-logo.jpg";
 import visaLogo from "@/assets/visa-logo.jpg";
+import DonateDialog from "@/components/donate/DonateDialog";
 
 const FORM_URL = "https://forms.gle/ii3i3bn21iQFy5Zw8";
 
@@ -109,15 +110,18 @@ export default function LetsTalkSection() {
                   </p>
                 </div>
               </div>
-              <div
-                aria-disabled="true"
-                title="Online donations coming soon"
-                className="inline-flex items-center justify-center gap-1.5 bg-muted text-muted-foreground font-semibold text-xs px-4 py-2 cursor-not-allowed select-none border border-border"
-              >
-                <Heart className="h-3.5 w-3.5" />
-                Donate Online (Coming Soon)
-                <ArrowRight className="h-3.5 w-3.5" />
-              </div>
+              <DonateDialog
+                trigger={
+                  <button
+                    type="button"
+                    className="inline-flex items-center justify-center gap-1.5 bg-gradient-brand text-primary-foreground font-semibold text-xs px-4 py-2 border border-primary hover:opacity-90 transition-opacity shadow-elegant"
+                  >
+                    <Heart className="h-3.5 w-3.5" fill="currentColor" />
+                    Donate Online
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </button>
+                }
+              />
             </div>
 
             <div className="grid md:grid-cols-2 gap-3">
