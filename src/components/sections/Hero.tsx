@@ -53,12 +53,15 @@ export default function Hero() {
             </Button>
           </div>
         </div>
-        <div className="order-1 md:order-2 relative animate-fade-in flex justify-center">
-          <img
-            src="/cecil-miller.png"
-            alt="Hon. Cecil Miller, Aspiring Senator for Nairobi"
-            className="relative w-auto h-[60vh] md:h-[70vh] max-h-[600px] object-contain"
-          />
+        <div className="order-1 md:order-2 relative animate-fade-in flex justify-center md:justify-end">
+          <div className="relative w-full max-w-[520px]">
+            <div aria-hidden className="absolute -inset-3 md:-inset-4 bg-primary/10 rounded-sm" />
+            <img
+              src="/cecil-miller.png"
+              alt="Hon. Cecil Miller, Aspiring Senator for Nairobi"
+              className="relative w-full aspect-[3/4] object-cover rounded-sm shadow-2xl"
+            />
+          </div>
         </div>
       </div>
     </section>
