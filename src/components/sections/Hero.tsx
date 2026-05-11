@@ -53,11 +53,11 @@ export default function Hero() {
             </Button>
           </div>
         </div>
-        <div className="order-1 md:order-2 relative animate-fade-in">
+        <div className="order-1 md:order-2 relative animate-fade-in flex justify-center">
           <img
             src="/cecil-miller.png"
             alt="Hon. Cecil Miller, Aspiring Senator for Nairobi"
-            className="relative w-full max-w-lg mx-auto object-contain max-h-[80vh]"
+            className="relative w-auto h-[60vh] md:h-[70vh] max-h-[600px] object-contain"
           />
         </div>
       </div>
