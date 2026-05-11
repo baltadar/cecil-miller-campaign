@@ -57,7 +57,7 @@ export default function Hero() {
           <img
             src="/cecil-miller.png"
             alt="Hon. Cecil Miller, Aspiring Senator for Nairobi"
-            className="relative w-full max-w-lg mx-auto object-contain"
+            className="relative w-full max-w-lg mx-auto object-contain max-h-[80vh]"
           />
         </div>
       </div>
