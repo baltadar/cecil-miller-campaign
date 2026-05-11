@@ -11,15 +11,15 @@ const videos = [
 ];
 
 const photos = [
-  { src: "/media/cecil-portrait-1.jpg", alt: "Hon. Cecil Miller — studio portrait" },
-  { src: "/media/cecil-portrait-2.jpg", alt: "Hon. Cecil Miller — studio portrait" },
-  { src: "/media/cecil-portrait-3.jpg", alt: "Hon. Cecil Miller — studio portrait" },
   { src: "https://res.cloudinary.com/dbgcwdes6/image/upload/v1777268144/Screenshot_2026-04-27_at_08.35.22_cww6a4.png", alt: "Hon. Cecil Miller on the campaign trail" },
   { src: "https://res.cloudinary.com/dbgcwdes6/image/upload/w_600,h_500,c_fill,g_north/v1777971972/WhatsApp_Image_2026-05-05_at_11.26.53_rmne0w.jpg" },
   { src: "https://res.cloudinary.com/dbgcwdes6/image/upload/v1777268161/WhatsApp_Image_2026-04-25_at_12.37.04_lhpw1t.jpg", alt: "Hon. Cecil Miller engaging with Nairobi residents" },
   { src: "https://res.cloudinary.com/dbgcwdes6/image/upload/v1777271182/Screenshot_2026-04-27_at_09.19.09_jdaf2k.png", alt: "Hon. Cecil Miller on the campaign trail" },
   { src: "https://res.cloudinary.com/dbgcwdes6/image/upload/v1777271182/Screenshot_2026-04-27_at_09.21.08_zllvwg.png", alt: "Hon. Cecil Miller on the campaign trail" },
   { src: "https://res.cloudinary.com/dbgcwdes6/image/upload/v1777271183/Screenshot_2026-04-27_at_09.18.47_fnxxqi.png", alt: "Hon. Cecil Miller on the campaign trail" },
+  { src: "/media/cecil-portrait-1.jpg", alt: "Hon. Cecil Miller — studio portrait", portrait: true },
+  { src: "/media/cecil-portrait-2.jpg", alt: "Hon. Cecil Miller — studio portrait", portrait: true },
+  { src: "/media/cecil-portrait-3.jpg", alt: "Hon. Cecil Miller — studio portrait", portrait: true },
   { src: "https://res.cloudinary.com/dbgcwdes6/image/upload/v1777268161/WhatsApp_Image_2026-04-25_at_12.37.04_lhpw1t.jpg", alt: "Hon. Cecil Miller engaging with Nairobi residents" },
   { src: "https://res.cloudinary.com/dbgcwdes6/image/upload/v1777271183/Screenshot_2026-04-27_at_09.19.44_daeg9l.png", alt: "Hon. Cecil Miller on the campaign trail" },
   { src: "https://res.cloudinary.com/dbgcwdes6/image/upload/v1777271184/Screenshot_2026-04-27_at_09.20.19_q5a78d.png", alt: "Hon. Cecil Miller on the campaign trail" },
@@ -93,8 +93,13 @@ export default function Media() {
           <SectionHeading eyebrow="Photos" title="On the Ground" description="Snapshots from rallies, meetings and community visits across Nairobi." />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {photos.map((p) => (
-              <a key={p.src} href={p.src} target="_blank" rel="noopener noreferrer" className="block aspect-[4/3] overflow-hidden border border-border bg-foreground/5 group">
-                <img src={p.src} alt={p.alt} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <a key={p.src} href={p.src} target="_blank" rel="noopener noreferrer" className={`block aspect-[4/3] overflow-hidden border border-border group ${p.portrait ? "bg-[#0b1020]" : "bg-foreground/5"}`}>
+                <img
+                  src={p.src}
+                  alt={p.alt}
+                  loading="lazy"
+                  className={`h-full w-full transition-transform duration-500 group-hover:scale-105 ${p.portrait ? "object-contain" : "object-cover"}`}
+                />
               </a>
             ))}
           </div>
