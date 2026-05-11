@@ -53,8 +53,8 @@ export default function Hero() {
             </Button>
           </div>
         </div>
-        <div className="order-1 md:order-2 relative animate-fade-in flex justify-center md:justify-end">
-          <div className="relative w-full max-w-[520px]">
+        <div className="order-1 md:order-2 relative animate-fade-in flex justify-center md:justify-end md:pr-6 lg:pr-10">
+          <div className="relative w-full max-w-[480px]">
             <div aria-hidden className="absolute -inset-3 md:-inset-4 bg-primary/10 rounded-sm" />
             <img
               src="/cecil-miller.png"
